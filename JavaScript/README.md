@@ -11,12 +11,11 @@
 5. [Bind, Call, Apply](#bca)
 6. [Event Propagation / Bubbling / Capturing](#events)
 
----
 <br><br>
 
 <a name="overview"></a>
 
-### Overview
+## Overview
 
 - First created in **1995** by Brendan Eich
 - Syntax is based on Java and C
@@ -38,7 +37,7 @@
 
 <a name="vars"></a>
 
-### Var, Let, Const
+## Var, Let, Const
 
 **Var** - function scoped.
 
@@ -55,7 +54,7 @@ ex. const BIRTHDAY = "03.25.1994"
 
 <a name="closures"></a>
 
-### Closures
+## Closures
 
 A closure **gives you access to an outer function's scope from an inner function**, regardless of whether the execution contexts of the outer function still exists.
 
@@ -75,7 +74,7 @@ Above, the execution context of the inner function has "closed in" the outer var
 
 <a name="currying"></a>
 
-### Currying
+## Currying
 
 Currying is a transformation of functions that translates a function from callable as f(a, b, c) into callable as f(a)(b)(c). Put another way, currying **transforms a function with multiple arguments into a sequence of functions each taking a single argument.**
 
@@ -84,7 +83,7 @@ Currying is a transformation of functions that translates a function from callab
 
 <a name="bca"></a>
 
-### Bind, Call, Apply
+## Bind, Call, Apply
 
 > All have to do with the <code>this</code> variable, which is created by the JS engine with every new execution context.
 
@@ -99,7 +98,7 @@ Currying is a transformation of functions that translates a function from callab
 
 <a name="events"></a>
 
-### Event Propagation - Bubbling & Capturing
+## Event Propagation - Bubbling & Capturing
 
 > REMEMBER: When an event occurs on a DOM element, that event does not entirely occur on that just one element.
 
@@ -120,13 +119,13 @@ Note the differences from <code>this (=event.currentTarget):</code>
   - rarely used and normally invisible to us.
   - to use, set the 3rd parameter of <code>.addEventListener()</code> to <code>true</code>
 
-#### SUMMARY
+### SUMMARY
 When an event happens:
   1) it **moves down from the document root** to <code>event.target</code>. On the way, it calls all event listeners/handlers with the 3rd (capture) param set to <code>true</code>
   2) next, the **handlers are called on the target element** itself
   3) then, the **event bubbles up to the root** calling all event listeners/handlers without the 3rd param (defaults to <code>false</code>
 
-#### ASIDE
+### ASIDE
 > **Three ways of assigning event handlers:**
 >  1) HTML attribute: <code>onclick="..."</code>
 >  2) DOM property: <code>elem.onclick = function</code>
@@ -135,6 +134,6 @@ When an event happens:
 ---
 <br><br>
 
-### Key Terms
+## Key Terms
 
 **Lexical Environment** - where something sits physically in the code you write, and what surrounds it. A lexical environment exists in programming languages in which where you write something is important.
