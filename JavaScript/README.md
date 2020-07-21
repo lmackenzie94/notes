@@ -10,6 +10,7 @@
 4. [Var, Let, Const](#vars)
 5. [Closures](#closures)
 6. [Currying](#currying)
+7. [Bind, Call, Apply](#bca)
 
 ---
 
@@ -45,7 +46,7 @@
 **Const** - block-scoped; can NOT be reassigned ("constant"); must assign a value when the variable is declared
 
 
-**TIP:** it's common practice to name hard-coded variables (i.e. not evaluated at run-time) with capitals and underscores.
+> **TIP:** it's common practice to name hard-coded variables (i.e. not evaluated at run-time) with capitals and underscores.
 
 - ex. const BIRTHDAY = "03.25.1994"
 
@@ -78,6 +79,20 @@ Currying is a transformation of functions that translates a function from callab
 
 ---
 
-#### <span style="color:red">Key Terms</span>
+<a name="bca"></a>
+
+### Bind, Call, Apply
+
+> All have to do with the *this* variable, which is created by the JS engine with every new execution context.
+
+**Bind:** allows us to set the *this* variable NOW while allowing you to execute the function LATER, because it **returns a new function object**
+
+**Call:** similar to bind, except it's used to set this *this* variable NOW and execute the function NOW. 
+
+**Apply:** exact same as call, except it accepts an array of arguments instead of one by one.
+
+---
+
+### Key Terms
 
 **Lexical Environment** - where something sits physically in the code you write, and what surrounds it. A lexical environment exists in programming languages in which where you write something is important.
