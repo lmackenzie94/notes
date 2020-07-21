@@ -12,6 +12,7 @@
 6. [Event Propagation / Bubbling / Capturing](#events)
 
 ---
+<br><br>
 
 <a name="overview"></a>
 
@@ -33,6 +34,7 @@
   - CoffeeScript (syntactic sugar), TypeScript (strict typing; Microsoft), Flow (typing; Facebook), Dart (stand-alone language that can be transpiled to JS; Google)
 
 ---
+<br><br>
 
 <a name="vars"></a>
 
@@ -49,6 +51,7 @@
 ex. const BIRTHDAY = "03.25.1994"
 
 ---
+<br><br>
 
 <a name="closures"></a>
 
@@ -68,6 +71,7 @@ function greet() {
 Above, the execution context of the inner function has "closed in" the outer variables that it would normally have access to anyway.
 
 ---
+<br><br>
 
 <a name="currying"></a>
 
@@ -76,6 +80,7 @@ Above, the execution context of the inner function has "closed in" the outer var
 Currying is a transformation of functions that translates a function from callable as f(a, b, c) into callable as f(a)(b)(c). Put another way, currying **transforms a function with multiple arguments into a sequence of functions each taking a single argument.**
 
 ---
+<br><br>
 
 <a name="bca"></a>
 
@@ -90,6 +95,7 @@ Currying is a transformation of functions that translates a function from callab
 **Apply:** exact same as call, except it accepts an array of arguments instead of one by one.
 
 ---
+<br><br>
 
 <a name="events"></a>
 
@@ -108,6 +114,7 @@ Note the differences from <code>this (=event.currentTarget):</code>
 
 <code>event.target</code> – is the “target” element that initiated the event, it doesn’t change through the bubbling process.
 <code>this</code> – is the “current” element, the one that has a currently running handler on it.
+<br><br>
 
 **Capturing:** the event starts from <code>window</code> and goes down to every element until it reaches the target element
   - rarely used and normally invisible to us.
@@ -126,6 +133,7 @@ When an event happens:
 >  3) Methods: <code>elem.addEventListener(event, handler[, phase])</code> to add, <code>removeEventListener</code> to remove.
 
 ---
+<br><br>
 
 ### Key Terms
 
