@@ -9,6 +9,7 @@
 3. [Arrays](#arrays)
 4. [Var, Let, Const](#vars)
 5. [Closures](#closures)
+6. [Currying](#currying)
 
 ---
 
@@ -19,10 +20,11 @@
 - First created in **1995** by Brendan Eich
 - Syntax is based on Java and C
 - Was originally created as a browser-only language, but is now used in many environments.
-- Is a **scripting** language (i.e. no compilation step in the execution of code)
+- Is a **scripting language** (i.e. no compilation step in the execution of code - the JS engine reads, interprets, and runs your code on the fly)
+- Is **dynamically typed** (i.e. variables are not bound to a data type. For example, a variable originally set to a string can later be changed to a number)
+- Is **single threaded** (i.e. code is executed in order and cannot move on to the next piece of code before the current code is finished)
 - Everything is an object (except primitive types)
-- Is "**dynamically typed**" (i.e. variables are not bound to a data type)
-- **Eight Data Types:** Object (non-primitive) & Symbols, Array, Number, BigInit, String, , Boolean, Null, Undefined
+- **Nine Data Types:** Object (non-primitive), Function, Symbol, Number, BigInit, String, Boolean, Null, Undefined
   - "Typeof null" returns "object" - this is an error in the language
 - Common JS engines: **V8** (Chrome and Opera); **SpiderMonkey** (Firefox)
   - Engines "parse" (read) the script and "compiles" (converts) it to machine language, which then runs.
@@ -43,7 +45,7 @@
 **Const** - block-scoped; can NOT be reassigned ("constant"); must assign a value when the variable is declared
 
 
-TIP: it's common practice to name hard-coded variables (i.e. not evaluated at run-time) with capitals and underscores.
+**TIP:** it's common practice to name hard-coded variables (i.e. not evaluated at run-time) with capitals and underscores.
 
 - ex. const BIRTHDAY = "03.25.1994"
 
