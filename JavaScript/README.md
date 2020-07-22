@@ -174,4 +174,10 @@ console.log(age) // 26
 
 ### To add:
 
-- 
+- <code>==</code> vs <code>===</code>
+- Higher Order Functions
+- "use strict"
+- <code>this</code>
+- prototype
+- immediately invoked function expression (IIFE)
+- [others](https://dev.to/macmacky/70-javascript-interview-questions-5gfi#14-whats-the-difference-between-and-)
