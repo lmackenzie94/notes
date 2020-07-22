@@ -11,6 +11,7 @@
 5. [Bind, Call, Apply](#bca)
 6. [Event Propagation / Bubbling / Capturing](#events)
 7. [Hoisting](#hoist)
+8. [The arguments object / rest parameters](#args)
 
 <br><br>
 
@@ -161,6 +162,50 @@ let name = 'Luke'
 console.log(age) // undefined
 var age = 26
 console.log(age) // 26
+```
+
+---
+<br><br>
+
+<a name="args"></a>
+
+## The <code>arguments</code> object
+
+- Is an Array-like object accessible inside non-arrow functions that contains the values of the arguments passed to that function.
+
+```javascript
+function func1(a,b,c){
+  console.log(arguments) // Arguments(3) [1, 2, 3, callee: ƒ, Symbol(Symbol.iterator): ƒ]
+  console.log(arguments[0]) // 1
+}
+
+func1(1,2,3)
+```
+
+> If you're writing ES6 compatible code, then **rest parameters** should be preferred.
+
+### Rest Parameters
+- allows us to represent an indefinite number of arguments as an array.
+
+```javascript
+function func2(a, b, ...moreArgs){
+  console.log(a) // 1
+  console.log(b) // 2
+  console.log(moreArgs) // [3, 4, 5]
+}
+
+func2(1,2,3,4,5)
+```
+
+**Unlike <code>arguments</code>, rest parameters work with arrow functions:**
+```javascript
+const func3 = (a, b, ...moreArgs) => {
+  console.log(a) // a
+  console.log(b) // b
+  console.log(moreArgs) // ['c', 'd', 'e']
+}
+
+func3('a','b','c','d','e')
 ```
 
 ---
