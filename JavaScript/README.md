@@ -10,6 +10,7 @@
 4. [Currying](#currying)
 5. [Bind, Call, Apply](#bca)
 6. [Event Propagation / Bubbling / Capturing](#events)
+7. [Hoisting](#hoist)
 
 <br><br>
 
@@ -41,10 +42,9 @@
 
 **Var** - function scoped.
 
-**Let** - block-scoped; CAN be reassigned; can be initialized without setting a value
+**Let** - block-scoped; CAN be reassigned; can be initialized without setting a value.
 
-**Const** - block-scoped; can NOT be reassigned ("constant"); must assign a value when the variable is declared
-
+**Const** - block-scoped; can NOT be reassigned ("constant"); must assign a value when the variable is declared.
 
 > **TIP:** it's common practice to name hard-coded variables (i.e. not evaluated at run-time) with capitals and underscores. <br>
 ex. const BIRTHDAY = "03.25.1994"
@@ -134,6 +134,44 @@ When an event happens:
 ---
 <br><br>
 
+<a name="hoist"></a>
+
+## Hoisting
+
+> Definition: "an act of raising or lifting"
+
+While it's helpful to imagine code being moved to the top of their scope when the JS engine interprets your code, remeber that **nothing actually moves.**
+
+The aforementioned interpretation happens in two phases: **compilation** and **execution**. During compilation, the JS engine parses the code for all function and variable declaration and alots space in memory. This process of “lifting” the variable and giving it a space in memory is called hoisting.
+
+**Are variables declared with let and const hoisted?**
+
+Yes! 
+
+- <code>let</code>, <code>const</code>, and <code>class</code> are **hoisted but not initialized.**
+    - The time between these variables being declared and being evaluated is referred to as the **temporal dead zone**. If you try to access these variables within this dead zone, you will get the reference error.
+
+- <code>var</code> and <code>function</code> (i.e. function declarations) are **hoisted and automatically initalized to <code>undefined</code>**.
+    - NOTE: only during the execution phase does the variable get assigned its value. This is why in the 'age' example below, the first log prints <code>undefined</code> not <code>26</code>.
+
+```javascript
+console.log(name) // Uncaught ReferenceError: name is not defined
+let name = 'Luke'
+
+console.log(age) // undefined
+var age = 26
+console.log(age) // 26
+```
+
+---
+<br><br>
+
 ## Key Terms
 
 **Lexical Environment** - where something sits physically in the code you write, and what surrounds it. A lexical environment exists in programming languages in which where you write something is important.
+
+<br>
+
+### To add:
+
+- 
