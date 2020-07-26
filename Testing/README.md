@@ -63,12 +63,12 @@
 ## Tools
 
 1) Jest
-- fully-featured testing framework. Runs all your tests. Has an entire assertion library.
-- Works great with React, but not limited to it.
+	- fully-featured testing framework. Runs all your tests. Has an entire assertion library.
+	- Works great with React, but not limited to it.
 
 2) Enzyme
-- a library specifically for testing React components.
-- integrates with many full testing libraries, including Jest.
-- creates a virtual DOM for testing.
-- allows testing without a browser.
-- uses React DOM but also gives us a tool kit for searching through the DOM, simulating simple events, etc. 
+	- a library specifically for testing React components.
+	- integrates with many full testing libraries, including Jest.
+	- creates a virtual DOM for testing.
+	- allows testing without a browser.
+	- uses React DOM but also gives us a tool kit for searching through the DOM, simulating simple events, etc. 
