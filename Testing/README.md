@@ -7,7 +7,7 @@
 1. [Overview](#overview)
 2. [Types](#types)
 3. [Test-Driven Development](#tdd)
-3. [Testing React](#react)
+4. [Tools](#tools)
 
 <br><br>
 
@@ -18,7 +18,7 @@
 > "Write tests. Not too many. Mostly integration" - Kent C. Dodds
 
 - Put simply, a test is code that throws an error when the actual result of something does not match the expected output.
-- Don't test implementation detail (user doesn't care what an element's id or class is).
+- Test behaviour (what app should do) instead of implementation (how app works).
 - Tests generally follow a common structure comprised of three phases:
 		1. **Arrange** - setup initial app state (ex. visit a web page, query for an element)
 		2. **Act** - take an action (ex. interact with that element)
@@ -51,8 +51,24 @@
 
 ## Test-Driven Development (TDD)
 
+> In short, write tests before the code.
+
+**Red-Green Testing:** write "shell" function -> write tests -> tests fail -> write code -> tests pass!
+- Why? More efficient; better code; fewer bugs; great code coverage; requires planning = fewer false starts.
+
 <br><br>
 
-<a name="react"></a>
+<a name="tools"></a>
 
-## Testing React
+## Tools
+
+1) Jest
+- fully-featured testing framework. Runs all your tests. Has an entire assertion library.
+- Works great with React, but not limited to it.
+
+2) Enzyme
+- a library specifically for testing React components.
+- integrates with many full testing libraries, including Jest.
+- creates a virtual DOM for testing.
+- allows testing without a browser.
+- uses React DOM but also gives us a tool kit for searching through the DOM, simulating simple events, etc. 
