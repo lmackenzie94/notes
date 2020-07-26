@@ -8,6 +8,7 @@
 2. [Types](#types)
 3. [Test-Driven Development](#tdd)
 4. [Tools](#tools)
+5. [Testing React](#react)
 
 <br><br>
 
@@ -62,13 +63,67 @@
 
 ## Tools
 
-1) Jest
+1) **Jest**
 	- fully-featured testing framework. Runs all your tests. Has an entire assertion library.
 	- Works great with React, but not limited to it.
 
-2) Enzyme
+2) **Enzyme**
 	- a library specifically for testing React components.
 	- integrates with many full testing libraries, including Jest.
 	- creates a virtual DOM for testing.
 	- allows testing without a browser.
 	- uses React DOM but also gives us a tool kit for searching through the DOM, simulating simple events, etc. 
+
+<br><br>
+
+<a name="react"></a>
+
+## Testing React
+
+- Similar to testing other JavaScript code.
+- Broadly two ways:
+	1) Rendering component trees in a simplified test environment and asserting on their output.
+	2) Running a complete app in a realistic browser environment (also known as “end-to-end” tests).
+
+### Tools:
+**Jest:** (see above) is a JavaScript test runner that lets you access the DOM via jsdom.
+**React Testing Library:** is a set of helpers that let you test React components without relying on their implementation details. This approach makes refactoring a breeze and also nudges you towards best practices for accessibility. 
+
+### Testing Recipes: 
+- assumes you're using Jest as a test runner.
+- for more detail, see the [React docs](https://reactjs.org/docs/testing-recipes.html)
+
+**Setup/Teardown**
+- use beforeEach() and afterEach() to render our React tree to a DOM element that's attached to <code>document</code>
+
+**act()**
+- a helper that ensures all updates related to tasks like rendering, user events, data fetching, etc. have been applied to the DOM before you make any assertions.
+
+> Not necessary if using *React Testing Library* since all its helpers are wrapped with act()
+
+**Rendering**
+- you might want to test whether a component renders correctly for given props.
+
+```javascript
+act(() => {
+    render(<Hello name="Jenny" />, container);
+  });
+  expect(container.textContent).toBe("Hello, Jenny!");
+```
+
+**Data Fetching**
+- Instead of calling real APIs in all your tests, you can mock requests with dummy data to make them run faster and prevent flaky tests due to an unavailable backend.
+
+**Mocking Modules**
+- Some modules might not work well inside a testing environment, or may not be as essential to the test itself. Mocking out these modules with dummy replacements can make it easier to write tests for your own code.
+
+**Events**
+- React recommends dispatching real DOM events on DOM elements, and then asserting on the result. 
+- without *React Testing Library* use <code>.dispatchEvent()</code>; with, use <code>fireEvent()</code>
+
+**Timers**
+**Snapshot Testing**
+**Multiple Renderers**
+**Something Missing?**
+
+
