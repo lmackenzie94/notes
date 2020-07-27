@@ -20,10 +20,11 @@
 
 - Put simply, a test is code that throws an error when the actual result of something does not match the expected output.
 - Test behaviour (what app should do) instead of implementation (how app works).
-- Tests generally follow a common structure comprised of three phases:
-		1. **Arrange** - setup initial app state (ex. visit a web page, query for an element)
-		2. **Act** - take an action (ex. interact with that element)
-    3. **Assert** - make an assertion (ex. make an assertion about page content) 
+- Tests generally follow a common structure comprised of three phases:<br/>
+	1. **Arrange** - setup initial app state (ex. visit a web page, query for an element)<br/>
+	2. **Act** - take an action (ex. interact with that element)<br/>
+	3. **Assert** - make an assertion (ex. make an assertion about page content)<br/>
+- Always make sure you can break your tests.
 
 <br><br>
 
