@@ -25,6 +25,8 @@
 	2. **Act** - take an action (ex. interact with that element)<br/>
 	3. **Assert** - make an assertion (ex. make an assertion about page content)<br/>
 - Always make sure you can break your tests.
+- When thinking about what to test, put yourself in the shoes of a user. In other words, if you were to test it manually, what would you do?
+- You don't necessarily need 100% code coverage. As long as critical functionalities are covered (i.e. anything users interact with often, anything that drives revenue, etc.), that may be all you need. 
 
 <br><br>
 
