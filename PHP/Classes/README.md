@@ -48,7 +48,7 @@ class Pet extends Person {
     }
 }
 
-// To access owner method: 
+// USAGE
 
 $pet1 = new Pet();
 
@@ -88,10 +88,18 @@ class Person {
     public function getName() {
         return $this->name;
     }
+
+    // Statics (can be accessed without instantiating the class - i.e. without creating an object)
+    // use 'self' instead of '$this'
+    public static $drinkingAge = 19;
+
+    public static function setDrinkingAge($newAge) {
+        self::$drinkingAge = $newAge;
+    }
+ 
 }
 
-// index.php
-
+// USAGE
 
 $myself = new Person('Luke', 26); // the arguments passed here correspond to the ones in the construct() in our Person class
 echo $myself->name; // Error
@@ -100,6 +108,9 @@ echo $myself->getName(); // 'Luke'
 // we could then change the name later if we wanted
 $myself->setName('Luca'); 
 
+// access static props/methods (no class instantiating necessary)
+echo Person::$drinkingAge;
+Person::setDrinkingAge(18);
 
 ?>
 
